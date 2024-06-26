@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/screen_background"
+    tools:layout_gravity="center">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/margin20"
+        android:layout_marginVertical="@dimen/margin8"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="@dimen/cornerRadius10"
+        app:cardElevation="1dp"
+        app:strokeWidth="@dimen/size0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/size215"
+                android:layout_height="@dimen/size135"
+                android:layout_marginTop="@dimen/margin30"
+                android:layout_marginBottom="@dimen/margin35"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/CornerSize5"
+                tools:src="@drawable/card_image1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin20"
+                android:layout_marginBottom="@dimen/margin20"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/mulish_bold"
+                android:includeFontPadding="false"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/textSize16"
+                app:cornerRadius="@dimen/cornerRadius5"
+                tools:text="@tools:sample/lorem" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

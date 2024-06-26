@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="status_bar_size">25dp</dimen>
+    <dimen name="size28">28dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="padding2">2dp</dimen>
+    <dimen name="margin8">8dp</dimen>
+    <dimen name="textSize25">25sp</dimen>
+    <dimen name="cornerRadius10">10dp</dimen>
+    <dimen name="margin12">12dp</dimen>
+    <dimen name="size0">0dp</dimen>
+    <dimen name="cornerRadius5">5dp</dimen>
+    <dimen name="textSize16">16sp</dimen>
+    <dimen name="size215">215dp</dimen>
+    <dimen name="size135">135dp</dimen>
+    <dimen name="margin30">30dp</dimen>
+    <dimen name="margin35">35dp</dimen>
+</resources>

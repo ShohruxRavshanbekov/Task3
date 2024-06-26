@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CornerSize5" parent="">
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <style name="ToolbarButton" parent="Base.Theme.Task3">
+        <item name="tint">@color/icon_tint</item>
+        <item name="shapeAppearanceOverlay">@style/CornerSize5</item>
+        <item name="android:layout_marginStart">@dimen/margin20</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="ExtraText" parent="Base.Theme.Task3">
+        <item name="android:fontFamily">@font/mulish_extra_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/textSize25</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+</resources>

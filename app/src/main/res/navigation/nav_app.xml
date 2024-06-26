@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_app"
+    app:startDestination="@id/firstScreen">
+
+    <fragment
+        android:id="@+id/firstScreen"
+        android:name="uz.futuresoft.task3.screens.first.FirstScreen"
+        android:label="screen_first"
+        tools:layout="@layout/screen_first">
+        <action
+            android:id="@+id/action_firstScreen_to_secondScreen"
+            app:destination="@id/secondScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondScreen"
+        android:name="uz.futuresoft.task3.screens.second.SecondScreen"
+        android:label="screen_second"
+        tools:layout="@layout/screen_second" />
+</navigation>

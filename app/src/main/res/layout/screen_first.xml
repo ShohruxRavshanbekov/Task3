@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background"
+    android:orientation="vertical"
+    tools:context=".screens.first.FirstScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/status_bar_size">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/menu"
+            style="@style/ToolbarButton"
+            android:layout_width="@dimen/size28"
+            android:layout_height="@dimen/size28"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_menu"
+            app:contentPadding="@dimen/padding2" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/ExtraText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin20"
+        android:layout_marginTop="@dimen/margin8"
+        android:layout_marginBottom="@dimen/margin12"
+        android:text="@string/ko_chmas_mulk" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/recycler_view_item_first_screen_content" />
+
+</LinearLayout>

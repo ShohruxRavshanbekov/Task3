@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="green1">#73D13F</color>
+    <color name="green2">#008A42</color>
+    <color name="error">#F20E0E</color>
+    <color name="screen_background">#EDF2FC</color>
+    <color name="card_background">#D8E4F0</color>
+    <color name="icon_tint">#353535</color>
+    <color name="text_color">#353535</color>
 </resources>

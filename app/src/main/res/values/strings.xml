@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Task 3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ko_chmas_mulk">Ko\'chmas mulk</string>
+    <string name="ko_p_qavatli_uylar">Ko\'p qavatli uylar</string>
+    <string name="hovli_uylar">Hovli uylar</string>
 </resources>
