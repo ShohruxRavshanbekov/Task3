@@ -1,14 +1,1078 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/screen_background"
+    android:orientation="vertical"
     tools:context=".screens.second.SecondScreen">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/status_bar_size"
+        android:layout_weight="0">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/back"
+            style="@style/ToolbarButton"
+            android:layout_width="@dimen/size28"
+            android:layout_height="@dimen/size28"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_arrow_left"
+            app:contentPadding="@dimen/padding2" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_weight="1">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/ExtraText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin8"
+                android:layout_marginBottom="@dimen/margin12"
+                tools:text="@string/kop_qavatli_uylarni_baholash" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin20"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/main_info_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/cornerRadius5"
+                    app:cardElevation="@dimen/elevation1"
+                    app:strokeWidth="@dimen/size0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/padding20"
+                        android:paddingVertical="@dimen/padding15">
+
+                        <TextView
+                            android:id="@+id/main_info_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/asosiy_malumotlar"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <ImageView
+                            android:id="@+id/main_info_expand_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0"
+                            android:src="@drawable/ic_arrow_bottom"
+                            app:tint="@color/icon_tint" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/main_info_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/jami_qavatlar_soni"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:endIconDrawable="@drawable/ic_arrow_bottom"
+                            app:hintEnabled="false">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/total_number_of_floors"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/tanlang"
+                                android:imeOptions="actionNext"
+                                android:inputType="none" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/uy_joylashgan_qavat"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:endIconDrawable="@drawable/ic_arrow_bottom"
+                            app:hintEnabled="false">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/house_located_floor"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/tanlang"
+                                android:imeOptions="actionNext"
+                                android:inputType="none" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/xonalar_soni"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:endIconDrawable="@drawable/ic_arrow_bottom"
+                            app:hintEnabled="false">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/number_of_rooms"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/tanlang"
+                                android:imeOptions="actionNext"
+                                android:inputType="none" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/qurilgan_davri"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:endIconDrawable="@drawable/ic_arrow_bottom"
+                            app:hintEnabled="false">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/construction_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/tanlang"
+                                android:imeOptions="actionNext"
+                                android:inputType="none" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/qurilish_turi"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:endIconDrawable="@drawable/ic_arrow_bottom"
+                            app:hintEnabled="false">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/construction_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/tanlang"
+                                android:imeOptions="actionNext"
+                                android:inputType="none" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/tamirlanganlik_darajasi"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:endIconDrawable="@drawable/ic_arrow_bottom"
+                            app:hintEnabled="false">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/level_of_repair"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/tanlang"
+                                android:imeOptions="actionNext"
+                                android:inputType="none" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/umumiy_maydoni"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/total_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/mavjud_emas"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/qurilish_maydoni"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/construction_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/mavjud_emas"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/foydali_maydoni"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/useful_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/mavjud_emas"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/yashash_maydoni"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/living_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/mavjud_emas"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberDecimal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/taqqoslash_birligi"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:endIconDrawable="@drawable/ic_arrow_bottom"
+                            app:hintEnabled="false">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/unit_of_comparison"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/tanlang"
+                                android:imeOptions="actionDone"
+                                android:inputType="none" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/save_main_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/margin16"
+                        android:enabled="false"
+                        android:fontFamily="@font/mulish_bold"
+                        android:includeFontPadding="false"
+                        android:paddingVertical="@dimen/padding14"
+                        android:text="@string/saqlash"
+                        android:textSize="@dimen/textSize18"
+                        app:cornerRadius="@dimen/cornerRadius10" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin10"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cadastre_info_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/cornerRadius5"
+                    app:cardElevation="@dimen/elevation1"
+                    app:strokeWidth="@dimen/size0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/padding20"
+                        android:paddingVertical="@dimen/padding15">
+
+                        <TextView
+                            android:id="@+id/cadastre_info_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/kadastr_malumorlari"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <ImageView
+                            android:id="@+id/cadastre_info_expand_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0"
+                            android:src="@drawable/ic_arrow_bottom"
+                            app:tint="@color/icon_tint" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/cadastre_info_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/qidiruv_turini_tanlang"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:endIconDrawable="@drawable/ic_arrow_bottom"
+                            app:hintEnabled="false">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/search_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/tanlang"
+                                android:imeOptions="actionNext"
+                                android:inputType="none" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/cadastre_number_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin16"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mulish_semibold"
+                                android:includeFontPadding="false"
+                                android:text="@string/kadastr_raqami"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/textSize16" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin10"
+                                app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                                app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                                app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                                app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                                app:boxStrokeColor="@color/green1"
+                                app:boxStrokeWidth="@dimen/size0"
+                                app:hintEnabled="false">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/cadastre_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/white"
+                                    android:backgroundTintMode="screen"
+                                    android:fontFamily="@font/mulish_medium"
+                                    android:hint="@string/_00_00_00_aa_00_00_aa"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="text" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin10"
+                                android:fontFamily="@font/mulish_semibold"
+                                android:includeFontPadding="false"
+                                android:text="@string/kadastrdan_malumot_olish"
+                                android:textAlignment="center"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/textSize16" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/egasning_nomi"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/owner"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/mavjud_emas"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/pinfl_inn"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            app:boxCornerRadiusBottomEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusBottomStart="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopEnd="@dimen/cornerRadius5"
+                            app:boxCornerRadiusTopStart="@dimen/cornerRadius5"
+                            app:boxStrokeColor="@color/green1"
+                            app:boxStrokeWidth="@dimen/size0"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/pinfl_inn"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:backgroundTintMode="screen"
+                                android:fontFamily="@font/mulish_medium"
+                                android:hint="@string/mavjud_emas"
+                                android:imeOptions="actionDone"
+                                android:inputType="number" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/not_ready_yet"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10"
+                        android:fontFamily="@font/mulish_bold"
+                        android:includeFontPadding="false"
+                        android:paddingVertical="@dimen/padding14"
+                        android:text="@string/hali_tayyor_emas"
+                        android:textColor="@color/error"
+                        android:textSize="@dimen/textSize18"
+                        app:cornerRadius="@dimen/cornerRadius10" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/save_cadastre_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/margin16"
+                        android:enabled="false"
+                        android:fontFamily="@font/mulish_bold"
+                        android:includeFontPadding="false"
+                        android:paddingVertical="@dimen/padding14"
+                        android:text="@string/saqlash"
+                        android:textSize="@dimen/textSize18"
+                        app:cornerRadius="@dimen/cornerRadius10" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin20"
+                android:layout_marginTop="@dimen/margin10"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/prohibitions_on_property_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/cornerRadius5"
+                    app:cardElevation="@dimen/elevation1"
+                    app:strokeWidth="@dimen/size0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/padding20"
+                        android:paddingVertical="@dimen/padding15">
+
+                        <TextView
+                            android:id="@+id/prohibitions_on_property_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/mulkka_taqiqlar"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <ImageView
+                            android:id="@+id/prohibitions_on_property_expand_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0"
+                            android:src="@drawable/ic_arrow_bottom"
+                            app:tint="@color/icon_tint" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/prohibitions_on_property_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/cornerRadius5"
+                        app:cardElevation="@dimen/elevation1"
+                        app:strokeWidth="@dimen/size0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/padding20">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mulish_semibold"
+                                android:includeFontPadding="false"
+                                android:text="@string/garov_reestrida"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/textSize16" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin20"
+                                android:fontFamily="@font/mulish_semibold"
+                                android:includeFontPadding="false"
+                                android:text="@string/mavjud_emas2"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/textSize16" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin1"
+                        android:layout_marginTop="@dimen/margin8"
+                        android:layout_marginBottom="@dimen/margin1"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/cornerRadius5"
+                        app:cardElevation="@dimen/elevation1"
+                        app:strokeWidth="@dimen/size0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/padding20">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mulish_semibold"
+                                android:includeFontPadding="false"
+                                android:text="@string/kadastr"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/textSize16" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin20"
+                                android:fontFamily="@font/mulish_semibold"
+                                android:includeFontPadding="false"
+                                android:text="@string/mavjud_emas2"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/textSize16" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin20"
+                android:layout_marginVertical="@dimen/margin10"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/photos_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/cornerRadius5"
+                    app:cardElevation="@dimen/elevation1"
+                    app:strokeWidth="@dimen/size0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/padding20"
+                        android:paddingVertical="@dimen/padding15">
+
+                        <TextView
+                            android:id="@+id/photos_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/mulish_semibold"
+                            android:includeFontPadding="false"
+                            android:text="@string/fotolar"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/textSize16" />
+
+                        <ImageView
+                            android:id="@+id/photos_expand_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0"
+                            android:src="@drawable/ic_arrow_bottom"
+                            app:tint="@color/icon_tint" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin20"
+        android:layout_weight="0"
+        android:enabled="false"
+        android:fontFamily="@font/mulish_bold"
+        android:includeFontPadding="false"
+        android:paddingVertical="@dimen/padding14"
+        android:text="@string/baholash"
+        android:textSize="@dimen/textSize18"
+        android:visibility="visible"
+        app:cornerRadius="@dimen/cornerRadius10" />
+
+</LinearLayout>

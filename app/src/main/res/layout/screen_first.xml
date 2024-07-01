@@ -31,7 +31,7 @@
         android:layout_marginHorizontal="@dimen/margin20"
         android:layout_marginTop="@dimen/margin8"
         android:layout_marginBottom="@dimen/margin12"
-        android:text="@string/ko_chmas_mulk" />
+        android:text="@string/kochmas_mulk" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contents"

@@ -15,4 +15,12 @@
     <dimen name="size135">135dp</dimen>
     <dimen name="margin30">30dp</dimen>
     <dimen name="margin35">35dp</dimen>
+    <dimen name="elevation1">1dp</dimen>
+    <dimen name="padding15">15dp</dimen>
+    <dimen name="padding20">20dp</dimen>
+    <dimen name="margin16">16dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="textSize18">18sp</dimen>
+    <dimen name="padding14">14dp</dimen>
+    <dimen name="margin1">1dp</dimen>
 </resources>

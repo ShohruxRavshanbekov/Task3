@@ -15,7 +15,7 @@
         android:layout_marginVertical="@dimen/margin8"
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="@dimen/cornerRadius10"
-        app:cardElevation="1dp"
+        app:cardElevation="@dimen/elevation1"
         app:strokeWidth="@dimen/size0">
 
         <LinearLayout
@@ -41,6 +41,7 @@
                 android:layout_marginHorizontal="@dimen/margin20"
                 android:layout_marginBottom="@dimen/margin20"
                 android:backgroundTint="@color/white"
+                android:clickable="false"
                 android:fontFamily="@font/mulish_bold"
                 android:includeFontPadding="false"
                 android:textColor="@color/text_color"

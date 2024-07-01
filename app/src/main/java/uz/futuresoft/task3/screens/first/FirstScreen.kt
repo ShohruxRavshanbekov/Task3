@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import uz.futuresoft.task3.R
 import uz.futuresoft.task3.databinding.ScreenFirstBinding
@@ -30,10 +31,12 @@ class FirstScreen : Fragment(), ContentsAdapterListener {
         // Sample data for recycler view
         val contents = listOf(
             HomeModel(
+                id = 0,
                 image = R.drawable.card_image1,
-                title = getString(R.string.ko_p_qavatli_uylar)
+                title = getString(R.string.kop_qavatli_uylar)
             ),
             HomeModel(
+                id = 1,
                 image = R.drawable.card_image2,
                 title = getString(R.string.hovli_uylar)
             )
@@ -43,6 +46,9 @@ class FirstScreen : Fragment(), ContentsAdapterListener {
     }
 
     override fun onItemClicked(item: HomeModel) {
-        findNavController().navigate(R.id.action_firstScreen_to_secondScreen)
+        findNavController().navigate(
+            R.id.action_firstScreen_to_secondScreen,
+            bundleOf("itemId" to item.id)
+        )
     }
 }
