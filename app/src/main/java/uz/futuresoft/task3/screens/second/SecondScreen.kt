@@ -1,17 +1,21 @@
 package uz.futuresoft.task3.screens.second
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import uz.futuresoft.task3.R
 import uz.futuresoft.task3.databinding.ScreenSecondBinding
+import uz.futuresoft.task3.utils.onAnimationEnd
+import uz.futuresoft.task3.utils.onAnimationStart
 
 class SecondScreen : Fragment() {
 
@@ -118,43 +122,38 @@ class SecondScreen : Fragment() {
         else
             binding.title.text = getString(R.string.hovli_uylarni_baholash)
 
-        binding.totalNumberOfFloors.setOnItemClickListener { _, view, position, _ ->
-//            mainInfoSelectionActions(view = view, list = totalNumberOfFloors, position = position)
+        binding.totalNumberOfFloors.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = totalNumberOfFloors[position]
             numberOfFloor = selectedItem
             checkMainInfosFields()
         }
 
-        binding.houseLocatedFloor.setOnItemClickListener { _, view, position, _ ->
-//            mainInfoSelectionActions(view = view, list = floors, position = position)
+        binding.houseLocatedFloor.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = floors[position]
             houseLocatedFloor = selectedItem
             checkMainInfosFields()
         }
 
-        binding.numberOfRooms.setOnItemClickListener { _, view, position, _ ->
-//            mainInfoSelectionActions(view = view, list = numberOfRooms, position = position)
+        binding.numberOfRooms.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = numberOfRooms[position]
             numberOfRoom = selectedItem
             checkMainInfosFields()
         }
 
-        binding.constructionTime.setOnItemClickListener { _, view, position, _ ->
+        binding.constructionTime.setOnItemClickListener { _, _, position, _ ->
 //            mainInfoSelectionActions(view = view, list = constructionDates, position = position)
             val selectedItem = constructionDates[position]
             constructedDate = selectedItem
             checkMainInfosFields()
         }
 
-        binding.constructionType.setOnItemClickListener { _, view, position, _ ->
-//            mainInfoSelectionActions(view = view, list = constructionTypes, position = position)
+        binding.constructionType.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = constructionTypes[position]
             constructionType = selectedItem
             checkMainInfosFields()
         }
 
-        binding.levelOfRepair.setOnItemClickListener { _, view, position, _ ->
-//            mainInfoSelectionActions(view = view, list = levelsOfRepair, position = position)
+        binding.levelOfRepair.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = levelsOfRepair[position]
             leverOfRepair = selectedItem
             checkMainInfosFields()
@@ -180,8 +179,7 @@ class SecondScreen : Fragment() {
             checkMainInfosFields()
         })
 
-        binding.unitOfComparison.setOnItemClickListener { _, view, position, _ ->
-//            mainInfoSelectionActions(view = view, list = unitsOfComparison, position = position)
+        binding.unitOfComparison.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = unitsOfComparison[position]
             unitOfComparison = selectedItem
             checkMainInfosFields()
@@ -241,6 +239,8 @@ class SecondScreen : Fragment() {
     }
 
     private fun expand(view: View) {
+        val animSlideDown = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_down)
+
         when (view) {
             binding.mainInfoCard -> {
                 binding.mainInfoCard.setCardBackgroundColor(
@@ -254,7 +254,8 @@ class SecondScreen : Fragment() {
                     ContextCompat.getColor(requireContext(), R.color.white),
                     android.graphics.PorterDuff.Mode.SRC_IN
                 )
-                binding.mainInfoContainer.isVisible = true
+                binding.mainInfoContainer.startAnimation(animSlideDown)
+                animSlideDown.onAnimationStart { binding.mainInfoContainer.isVisible = true }
             }
 
             binding.cadastreInfoCard -> {
@@ -269,7 +270,8 @@ class SecondScreen : Fragment() {
                     ContextCompat.getColor(requireContext(), R.color.white),
                     android.graphics.PorterDuff.Mode.SRC_IN
                 )
-                binding.cadastreInfoContainer.isVisible = true
+                binding.cadastreInfoContainer.startAnimation(animSlideDown)
+                animSlideDown.onAnimationStart { binding.cadastreInfoContainer.isVisible = true }
             }
 
             binding.prohibitionsOnPropertyCard -> {
@@ -284,7 +286,10 @@ class SecondScreen : Fragment() {
                     ContextCompat.getColor(requireContext(), R.color.white),
                     android.graphics.PorterDuff.Mode.SRC_IN
                 )
-                binding.prohibitionsOnPropertyContainer.isVisible = true
+                binding.prohibitionsOnPropertyContainer.startAnimation(animSlideDown)
+                animSlideDown.onAnimationStart {
+                    binding.prohibitionsOnPropertyContainer.isVisible = true
+                }
             }
 
             binding.photosCard -> {
@@ -304,6 +309,8 @@ class SecondScreen : Fragment() {
     }
 
     private fun hide(view: View) {
+        val animSlideUp = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_up)
+
         when (view) {
             binding.mainInfoCard -> {
                 binding.mainInfoCard.setCardBackgroundColor(
@@ -317,7 +324,8 @@ class SecondScreen : Fragment() {
                     ContextCompat.getColor(requireContext(), R.color.icon_tint),
                     android.graphics.PorterDuff.Mode.SRC_IN
                 )
-                binding.mainInfoContainer.isVisible = false
+                binding.mainInfoContainer.startAnimation(animSlideUp)
+                animSlideUp.onAnimationEnd { binding.mainInfoContainer.isVisible = false }
             }
 
             binding.cadastreInfoCard -> {
@@ -332,7 +340,8 @@ class SecondScreen : Fragment() {
                     ContextCompat.getColor(requireContext(), R.color.icon_tint),
                     android.graphics.PorterDuff.Mode.SRC_IN
                 )
-                binding.cadastreInfoContainer.isVisible = false
+                binding.cadastreInfoContainer.startAnimation(animSlideUp)
+                animSlideUp.onAnimationEnd { binding.cadastreInfoContainer.isVisible = false }
             }
 
             binding.prohibitionsOnPropertyCard -> {
@@ -347,7 +356,10 @@ class SecondScreen : Fragment() {
                     ContextCompat.getColor(requireContext(), R.color.icon_tint),
                     android.graphics.PorterDuff.Mode.SRC_IN
                 )
-                binding.prohibitionsOnPropertyContainer.isVisible = false
+                binding.prohibitionsOnPropertyContainer.startAnimation(animSlideUp)
+                animSlideUp.onAnimationEnd {
+                    binding.prohibitionsOnPropertyContainer.isVisible = false
+                }
             }
 
             binding.photosCard -> {
@@ -371,46 +383,6 @@ class SecondScreen : Fragment() {
                 !isCadastreInfoCardExpanded &&
                 !isProhibitionsOnPropertyInfoCardExpanded &&
                 !isPhotosCardExpanded
-    }
-
-    private fun mainInfoSelectionActions(view: View, list: List<String>, position: Int) {
-        when (view) {
-            binding.totalNumberOfFloors -> {
-                val selectedItem = list[position]
-                numberOfFloor = selectedItem
-            }
-
-            binding.houseLocatedFloor -> {
-                val selectedItem = list[position]
-                houseLocatedFloor = selectedItem
-            }
-
-            binding.numberOfRooms -> {
-                val selectedItem = list[position]
-                numberOfRoom = selectedItem
-            }
-
-            binding.constructionTime -> {
-                val selectedItem = list[position]
-                constructedDate = selectedItem
-            }
-
-            binding.constructionType -> {
-                val selectedItem = list[position]
-                constructionType = selectedItem
-            }
-
-            binding.levelOfRepair -> {
-                val selectedItem = list[position]
-                leverOfRepair = selectedItem
-            }
-
-            binding.unitOfComparison -> {
-                val selectedItem = list[position]
-                unitOfComparison = selectedItem
-            }
-        }
-        checkMainInfosFields()
     }
 
     private fun checkMainInfosFields() {
