@@ -555,7 +555,7 @@ class SecondScreen : Fragment() {
             }
         }
 
-    fun enableSendImagesButton() {
+    private fun enableSendImagesButton() {
         binding.sendImages.isEnabled = appearance1 != null ||
                 appearance2 != null ||
                 entrance != null ||
