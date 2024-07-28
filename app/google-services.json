@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "353003679936",
+    "project_id": "hamkorbank-task3",
+    "storage_bucket": "hamkorbank-task3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353003679936:android:c61c8d13ca1ab6153b3d25",
+        "android_client_info": {
+          "package_name": "uz.futuresoft.task3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpwoN_6FnJHZkNDdmqQ9RsPuSYuyyY1oM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
@@ -288,6 +289,10 @@ class SecondScreen : Fragment() {
         binding.imageKitchen.setOnClickListener {
             chooseImage(view = it)
         }
+
+        binding.sendImages.setOnClickListener {
+
+        }
     }
 
     private fun expand(view: View) {
@@ -489,6 +494,7 @@ class SecondScreen : Fragment() {
                         image = appearance1!!
                     )
                     appearance1Clicked = false
+                    enableSendImagesButton()
                 } else if (appearance2Clicked) {
                     appearance2 = uri
                     binding.imageAppearance2.loadImage(
@@ -496,6 +502,7 @@ class SecondScreen : Fragment() {
                         image = appearance2!!
                     )
                     appearance2Clicked = false
+                    enableSendImagesButton()
                 } else if (entranceClicked) {
                     entrance = uri
                     binding.imageEntrance.loadImage(
@@ -503,6 +510,7 @@ class SecondScreen : Fragment() {
                         image = entrance!!
                     )
                     entranceClicked = false
+                    enableSendImagesButton()
                 } else if (outerDoorClicked) {
                     outerDoor = uri
                     binding.imageOuterDoor.loadImage(
@@ -510,6 +518,7 @@ class SecondScreen : Fragment() {
                         image = outerDoor!!
                     )
                     outerDoorClicked = false
+                    enableSendImagesButton()
                 } else if (corridorClicked) {
                     corridor = uri
                     binding.imageCorridor.loadImage(
@@ -517,6 +526,7 @@ class SecondScreen : Fragment() {
                         image = corridor!!
                     )
                     corridorClicked = false
+                    enableSendImagesButton()
                 } else if (bathroomClicked) {
                     bathroom = uri
                     binding.imageBathroom.loadImage(
@@ -524,6 +534,7 @@ class SecondScreen : Fragment() {
                         image = bathroom!!
                     )
                     bathroomClicked = false
+                    enableSendImagesButton()
                 } else if (toiletClicked) {
                     toilet = uri
                     binding.imageToilet.loadImage(
@@ -531,6 +542,7 @@ class SecondScreen : Fragment() {
                         image = toilet!!
                     )
                     toiletClicked = false
+                    enableSendImagesButton()
                 } else {
                     kitchen = uri
                     binding.imageKitchen.loadImage(
@@ -538,7 +550,19 @@ class SecondScreen : Fragment() {
                         image = kitchen!!
                     )
                     kitchenClicked = false
+                    enableSendImagesButton()
                 }
             }
         }
+
+    fun enableSendImagesButton() {
+        binding.sendImages.isEnabled = appearance1 != null ||
+                appearance2 != null ||
+                entrance != null ||
+                outerDoor != null ||
+                corridor != null ||
+                bathroom != null ||
+                toilet != null ||
+                kitchen != null
+    }
 }
