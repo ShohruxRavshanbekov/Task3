@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="uz.futuresoft.task3" />
+                  <option name="mobileSdkAppId" value="1:353003679936:android:c61c8d13ca1ab6153b3d25" />
+                  <option name="projectId" value="hamkorbank-task3" />
+                  <option name="projectNumber" value="353003679936" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

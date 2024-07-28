@@ -1,4 +1,4 @@
-package uz.futuresoft.task3.activities
+package uz.futuresoft.task3.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

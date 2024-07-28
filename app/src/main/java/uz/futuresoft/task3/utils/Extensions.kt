@@ -1,6 +1,10 @@
 package uz.futuresoft.task3.utils
 
+import android.content.Context
+import android.net.Uri
 import android.view.animation.Animation
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 
 fun Animation.onAnimationStart(onAnimationStart: () -> Unit) {
     this.setAnimationListener(object : Animation.AnimationListener {
@@ -24,4 +28,8 @@ fun Animation.onAnimationEnd(onAnimationEnd: () -> Unit) {
 
         override fun onAnimationRepeat(animation: Animation?) {}
     })
+}
+
+fun ImageView.loadImage(context: Context, image: Uri) {
+    Glide.with(context).load(image).into(this)
 }

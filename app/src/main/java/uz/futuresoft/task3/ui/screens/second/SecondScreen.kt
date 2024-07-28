@@ -1,12 +1,13 @@
-package uz.futuresoft.task3.screens.second
+package uz.futuresoft.task3.ui.screens.second
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import uz.futuresoft.task3.R
 import uz.futuresoft.task3.databinding.ScreenSecondBinding
+import uz.futuresoft.task3.utils.loadImage
 import uz.futuresoft.task3.utils.onAnimationEnd
 import uz.futuresoft.task3.utils.onAnimationStart
 
@@ -52,6 +54,25 @@ class SecondScreen : Fragment() {
     private var cadastreNumber = ""
     private var owner = ""
     private var pinflOrInn = ""
+
+    // Variables for images
+    private var appearance1Clicked = false
+    private var appearance2Clicked = false
+    private var entranceClicked = false
+    private var outerDoorClicked = false
+    private var corridorClicked = false
+    private var bathroomClicked = false
+    private var toiletClicked = false
+    private var kitchenClicked = false
+
+    private var appearance1: Uri? = null
+    private var appearance2: Uri? = null
+    private var entrance: Uri? = null
+    private var outerDoor: Uri? = null
+    private var corridor: Uri? = null
+    private var bathroom: Uri? = null
+    private var toilet: Uri? = null
+    private var kitchen: Uri? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -141,7 +162,6 @@ class SecondScreen : Fragment() {
         }
 
         binding.constructionTime.setOnItemClickListener { _, _, position, _ ->
-//            mainInfoSelectionActions(view = view, list = constructionDates, position = position)
             val selectedItem = constructionDates[position]
             constructedDate = selectedItem
             checkMainInfosFields()
@@ -236,6 +256,38 @@ class SecondScreen : Fragment() {
             if (isPhotosCardExpanded) expand(view = it) else hide(view = it)
             checkExpandability()
         }
+
+        binding.imageAppearance.setOnClickListener {
+            chooseImage(view = it)
+        }
+
+        binding.imageAppearance2.setOnClickListener {
+            chooseImage(view = it)
+        }
+
+        binding.imageEntrance.setOnClickListener {
+            chooseImage(view = it)
+        }
+
+        binding.imageOuterDoor.setOnClickListener {
+            chooseImage(view = it)
+        }
+
+        binding.imageCorridor.setOnClickListener {
+            chooseImage(view = it)
+        }
+
+        binding.imageBathroom.setOnClickListener {
+            chooseImage(view = it)
+        }
+
+        binding.imageToilet.setOnClickListener {
+            chooseImage(view = it)
+        }
+
+        binding.imageKitchen.setOnClickListener {
+            chooseImage(view = it)
+        }
     }
 
     private fun expand(view: View) {
@@ -304,6 +356,10 @@ class SecondScreen : Fragment() {
                     ContextCompat.getColor(requireContext(), R.color.white),
                     android.graphics.PorterDuff.Mode.SRC_IN
                 )
+                binding.photosContainer.startAnimation(animSlideDown)
+                animSlideDown.onAnimationStart {
+                    binding.photosContainer.isVisible = true
+                }
             }
         }
     }
@@ -374,6 +430,10 @@ class SecondScreen : Fragment() {
                     ContextCompat.getColor(requireContext(), R.color.icon_tint),
                     android.graphics.PorterDuff.Mode.SRC_IN
                 )
+                binding.photosContainer.startAnimation(animSlideUp)
+                animSlideUp.onAnimationEnd {
+                    binding.photosContainer.isVisible = false
+                }
             }
         }
     }
@@ -404,4 +464,81 @@ class SecondScreen : Fragment() {
                 owner.isNotEmpty() &&
                 pinflOrInn.isNotEmpty()
     }
+
+    private fun chooseImage(view: View) {
+        when (view) {
+            binding.imageAppearance -> appearance1Clicked = true
+            binding.imageAppearance2 -> appearance2Clicked = true
+            binding.imageEntrance -> entranceClicked = true
+            binding.imageOuterDoor -> outerDoorClicked = true
+            binding.imageCorridor -> corridorClicked = true
+            binding.imageBathroom -> bathroomClicked = true
+            binding.imageToilet -> toiletClicked = true
+            binding.imageKitchen -> kitchenClicked = true
+        }
+        photosFromGallery.launch("image/*")
+    }
+
+    private val photosFromGallery =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+            if (uri != null) {
+                if (appearance1Clicked) {
+                    appearance1 = uri
+                    binding.imageAppearance.loadImage(
+                        context = requireContext(),
+                        image = appearance1!!
+                    )
+                    appearance1Clicked = false
+                } else if (appearance2Clicked) {
+                    appearance2 = uri
+                    binding.imageAppearance2.loadImage(
+                        context = requireContext(),
+                        image = appearance2!!
+                    )
+                    appearance2Clicked = false
+                } else if (entranceClicked) {
+                    entrance = uri
+                    binding.imageEntrance.loadImage(
+                        context = requireContext(),
+                        image = entrance!!
+                    )
+                    entranceClicked = false
+                } else if (outerDoorClicked) {
+                    outerDoor = uri
+                    binding.imageOuterDoor.loadImage(
+                        context = requireContext(),
+                        image = outerDoor!!
+                    )
+                    outerDoorClicked = false
+                } else if (corridorClicked) {
+                    corridor = uri
+                    binding.imageCorridor.loadImage(
+                        context = requireContext(),
+                        image = corridor!!
+                    )
+                    corridorClicked = false
+                } else if (bathroomClicked) {
+                    bathroom = uri
+                    binding.imageBathroom.loadImage(
+                        context = requireContext(),
+                        image = bathroom!!
+                    )
+                    bathroomClicked = false
+                } else if (toiletClicked) {
+                    toilet = uri
+                    binding.imageToilet.loadImage(
+                        context = requireContext(),
+                        image = toilet!!
+                    )
+                    toiletClicked = false
+                } else {
+                    kitchen = uri
+                    binding.imageKitchen.loadImage(
+                        context = requireContext(),
+                        image = kitchen!!
+                    )
+                    kitchenClicked = false
+                }
+            }
+        }
 }

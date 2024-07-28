@@ -36,4 +36,13 @@
     <string name="garov_reestrida">Garov reestrida:</string>
     <string name="kadastr">Kadastr:</string>
     <string name="mavjud_emas2">\"Mavjud emas\"</string>
+    <string name="tashqi_korinishi">Tashqi ko’rinishi</string>
+    <string name="tashqi_korinishi2">Tashqi ko’rinishi 2</string>
+    <string name="podezd_korinishi">Podezd ko’rinishi</string>
+    <string name="uy_tashqi_eshigi">Uy tashqi eshigi</string>
+    <string name="karidor">Karidor</string>
+    <string name="xommom">Xommom</string>
+    <string name="xojatxona">Xojatxona</string>
+    <string name="oshxona">Oshxona</string>
+    <string name="yuborish">Yuborish</string>
 </resources>

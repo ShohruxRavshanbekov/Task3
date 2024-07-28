@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/firstScreen"
-        android:name="uz.futuresoft.task3.screens.first.FirstScreen"
+        android:name="uz.futuresoft.task3.ui.screens.first.FirstScreen"
         android:label="screen_first"
         tools:layout="@layout/screen_first">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondScreen"
-        android:name="uz.futuresoft.task3.screens.second.SecondScreen"
+        android:name="uz.futuresoft.task3.ui.screens.second.SecondScreen"
         android:label="screen_second"
         tools:layout="@layout/screen_second" />
 </navigation>

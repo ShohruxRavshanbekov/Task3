@@ -1,4 +1,4 @@
-package uz.futuresoft.task3.screens.first
+package uz.futuresoft.task3.ui.screens.first
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,9 +9,9 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import uz.futuresoft.task3.R
 import uz.futuresoft.task3.databinding.ScreenFirstBinding
-import uz.futuresoft.task3.screens.first.adapters.ContentsAdapter
-import uz.futuresoft.task3.screens.first.adapters.ContentsAdapterListener
-import uz.futuresoft.task3.screens.first.models.HomeModel
+import uz.futuresoft.task3.ui.screens.first.adapters.ContentsAdapter
+import uz.futuresoft.task3.ui.screens.first.adapters.ContentsAdapterListener
+import uz.futuresoft.task3.ui.screens.first.models.HomeModel
 
 class FirstScreen : Fragment(), ContentsAdapterListener {
 

@@ -1,8 +1,8 @@
-package uz.futuresoft.task3.screens.first.adapters
+package uz.futuresoft.task3.ui.screens.first.adapters
 
 import androidx.recyclerview.widget.RecyclerView
 import uz.futuresoft.task3.databinding.RecyclerViewItemFirstScreenContentBinding
-import uz.futuresoft.task3.screens.first.models.HomeModel
+import uz.futuresoft.task3.ui.screens.first.models.HomeModel
 
 class ContentsAdapterViewHolder(
     private val binding: RecyclerViewItemFirstScreenContentBinding,
